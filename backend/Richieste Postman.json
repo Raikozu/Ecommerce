@@ -1,0 +1,932 @@
+{
+	"info": {
+		"_postman_id": "02b98fb2-5129-4919-bff9-283c73be0100",
+		"name": "Personal-Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27226177"
+	},
+	"item": [
+		{
+			"name": "Utente",
+			"item": [
+				{
+					"name": "Registrati",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Fran\",\r\n    \"cognome\":\"Cesco\",\r\n    \"email\":\"fra@gmaiil.it\",\r\n    \"password\":\"fra753357\",\r\n    \"telefono\":\"3931098122\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/utente/registrati",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"registrati"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accedi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"fra@\",\r\n    \"password\":\"fra753357\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/utente/accedi",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"accedi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifica",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzUxODA2LCJleHAiOjE2ODQ3NTMyNDZ9.GW47vINHkVhp8DCMdjZOmE5j3hHCDbY4I0DLk1CEU7Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/modifica?nome=&cognome=Scemino&telefono&password",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"modifica"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": ""
+								},
+								{
+									"key": "cognome",
+									"value": "Scemino"
+								},
+								{
+									"key": "telefono",
+									"value": null
+								},
+								{
+									"key": "password",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUtente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU5MzQxLCJleHAiOjE2ODQ3NjA3ODF9.yc3-q7P3bk87QFYOodW4LCCP06RBYFB3iID2CjvklKs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/:email",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "fra@"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListaUtenti",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzUxODA2LCJleHAiOjE2ODQ3NTMyNDZ9.GW47vINHkVhp8DCMdjZOmE5j3hHCDbY4I0DLk1CEU7Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/listaUtenti",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"listaUtenti"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Elimina",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NTEyNTIzLCJleHAiOjE2ODQ1MTM5NjN9.y52KidE698NVPzSPvHJ_6DdoGbCpd62lkNC3DDLSx5M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/elimina?email=fra@gmaiil.it",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"elimina"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "fra@gmaiil.it"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AggiungiSaldo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzUxNjA4LCJleHAiOjE2ODQ3NTMwNDh9.ecPkunXBV8qH8tBwGfokhaKxJVLVSvKu0AE9lyfbuQc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/aggiungiSaldo?saldo=300",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"aggiungiSaldo"
+							],
+							"query": [
+								{
+									"key": "saldo",
+									"value": "300"
+								},
+								{
+									"key": "saldo",
+									"value": "300",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSaldo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU5MzQxLCJleHAiOjE2ODQ3NjA3ODF9.yc3-q7P3bk87QFYOodW4LCCP06RBYFB3iID2CjvklKs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/saldo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"saldo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prodotto",
+			"item": [
+				{
+					"name": "AggiungiProdotto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU4MTM5LCJleHAiOjE2ODQ3NTk1Nzl9.BTtnpMXTdNhcdwU5H_wpeJDw4yULVrPBqiIzcEBBv9M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"cotechino\",\r\n    \"quantita\":\"3\",\r\n    \"descrizione\":\"dissetante\",\r\n    \"prezzoUnitario\":\"11.50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/prodotto/aggiungiProdotto",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prodotto",
+								"aggiungiProdotto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modificaDescrizione",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU3MzQ2LCJleHAiOjE2ODQ3NTg3ODZ9.7gdYG-dQZSZiUefSiCdfBhUoQmk-uJ934pLCKEInMLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/prodotto/modificaDescrizione?nome=pane&descrizione=fa shcifod",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prodotto",
+								"modificaDescrizione"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "pane"
+								},
+								{
+									"key": "descrizione",
+									"value": "fa shcifod"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AggiungiQuantita",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzQ5MDE5LCJleHAiOjE2ODQ3NTA0NTl9.eI22kIzAHF9jGD-ivRqoKsnIo31J8yAuH9UDVkFlnIE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/prodotto/aggiungiQuantita?nome=birra&quantita=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prodotto",
+								"aggiungiQuantita"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "birra"
+								},
+								{
+									"key": "quantita",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RimuoviQuantita",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NjAzNTg2LCJleHAiOjE2ODQ2MDUwMjZ9.yyb-W3GgiukLne4h2cO7dApkrq_wfaZ2B_5NaUKBDD0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/prodotto/togliQuantita?nome=birra&quantita=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prodotto",
+								"togliQuantita"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "birra"
+								},
+								{
+									"key": "quantita",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RimuoviProdotto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzQ4MjYxLCJleHAiOjE2ODQ3NDk3MDF9.AQGbpaUlMOVx8LuRmRCJXpCON7JRIgvu8v-h_9AcX-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/prodotto/rimuovi?nome=acqua",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prodotto",
+								"rimuovi"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "acqua"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProdotto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NjA0MjM3LCJleHAiOjE2ODQ2MDU2Nzd9.HBu5JEeqzVtQDICXwvJb0PBnRFci9SsiMlpsh8ylR30",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/prodotto/:nome",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prodotto",
+								":nome"
+							],
+							"variable": [
+								{
+									"key": "nome",
+									"value": "birra"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListaProdotti",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzQ4MjYxLCJleHAiOjE2ODQ3NDk3MDF9.AQGbpaUlMOVx8LuRmRCJXpCON7JRIgvu8v-h_9AcX-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/prodotto/listaProdotti",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prodotto",
+								"listaProdotti"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RicercaDescrizione",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzNiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0ODM0NzUyLCJleHAiOjE2ODQ4MzYxOTJ9.EbfF6-NQc5BxSvljBq64RhtxTP8I73BuMnXzXlhsgBA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/prodotto/ricerca?descrizione=dissetante&pagina=0&dimensione=100",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prodotto",
+								"ricerca"
+							],
+							"query": [
+								{
+									"key": "descrizione",
+									"value": "dissetante"
+								},
+								{
+									"key": "pagina",
+									"value": "0"
+								},
+								{
+									"key": "dimensione",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrello",
+			"item": [
+				{
+					"name": "Aggiungi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU5MDQ1LCJleHAiOjE2ODQ3NjA0ODV9.ER5kYMgjzY-E12O0LhYiEnWayloyFuXsv4RQLx8X3JQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/aggiungi?nome=cotechino&quantita=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"aggiungi"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "cotechino"
+								},
+								{
+									"key": "quantita",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RimuoviQuantita",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzQ5MDE5LCJleHAiOjE2ODQ3NTA0NTl9.eI22kIzAHF9jGD-ivRqoKsnIo31J8yAuH9UDVkFlnIE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/rimuoviQuantita?nome=birra&quantita=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"rimuoviQuantita"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "birra"
+								},
+								{
+									"key": "quantita",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RimuoviProdotto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzQ5MDE5LCJleHAiOjE2ODQ3NTA0NTl9.eI22kIzAHF9jGD-ivRqoKsnIo31J8yAuH9UDVkFlnIE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/rimuoviProdotto?nome=acqua",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"rimuoviProdotto"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "acqua"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProdottiNelCarrello",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU4MTM5LCJleHAiOjE2ODQ3NTk1Nzl9.BTtnpMXTdNhcdwU5H_wpeJDw4yULVrPBqiIzcEBBv9M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/carrello",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"carrello"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCarrelli",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU5MzQxLCJleHAiOjE2ODQ3NjA3ODF9.yc3-q7P3bk87QFYOodW4LCCP06RBYFB3iID2CjvklKs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/carrelli",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"carrelli"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendita",
+			"item": [
+				{
+					"name": "CompraSingoloProdotto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU3MzQ2LCJleHAiOjE2ODQ3NTg3ODZ9.7gdYG-dQZSZiUefSiCdfBhUoQmk-uJ934pLCKEInMLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/compraSingoloProdotto?nome=pane",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"compraSingoloProdotto"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "pane"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CompraTutto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU5MzQxLCJleHAiOjE2ODQ3NjA3ODF9.yc3-q7P3bk87QFYOodW4LCCP06RBYFB3iID2CjvklKs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/utente/compraTutto",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"utente",
+								"compraTutto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListaVendite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU5MzQxLCJleHAiOjE2ODQ3NjA3ODF9.yc3-q7P3bk87QFYOodW4LCCP06RBYFB3iID2CjvklKs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vendita/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendita",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListaVenditeCompratore",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU5MDQ1LCJleHAiOjE2ODQ3NjA0ODV9.ER5kYMgjzY-E12O0LhYiEnWayloyFuXsv4RQLx8X3JQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vendita/getCompratore?email=fra@",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendita",
+								"getCompratore"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "fra@"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListaVenditeProdotto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmcmFAIiwiaWF0IjoxNjg0NzU4NTQxLCJleHAiOjE2ODQ3NTk5ODF9.fYZq1ubflzTcQ_0cRMJUZAbisw1VvCSE6_Bs_RL69yM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vendita/getProdotto?nome=piselli",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendita",
+								"getProdotto"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "piselli"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

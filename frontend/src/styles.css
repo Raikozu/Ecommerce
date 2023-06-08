@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: sans-serif;
+}
+.common-form{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: auto;
+}
+.form-input{
+    height: 35px;
+    margin-bottom: 20px;
+    border: 1px solid #17008b;
+}
+.form-button{
+    height: 35px;
+    border: 1px solid darkcyan;
+    cursor: pointer;
+    background-color: darkcyan;
+    font-weight: 700;
+}

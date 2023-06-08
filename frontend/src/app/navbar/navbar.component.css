@@ -1,0 +1,17 @@
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(184, 171, 171);
+    border-radius: 8px;
+}
+.title{
+    font-size: larger;
+    color: aqua;
+}
+.nav ul {
+    list-style-type: none;
+    justify-content: space-around;
+    display: flex;
+    flex: 0.5;
+}
