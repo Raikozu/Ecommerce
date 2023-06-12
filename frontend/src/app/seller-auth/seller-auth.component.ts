@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, of } from 'rxjs';
-import { ApiService } from '../api.service';
+import { ApiService } from '../services/api.service';
 import { API } from '../constants';
+import { Router } from '@angular/router';
+import { SellerService } from '../services/seller.service';
 
 @Component({
   selector: 'app-seller-auth',
@@ -11,15 +13,13 @@ import { API } from '../constants';
 })
 export class SellerAuthComponent implements OnInit{
 
-  constructor(private apiService:ApiService) {}
+  constructor(private sellerService:SellerService,private apiService:ApiService, private router:Router) {}
 
   ngOnInit(): void {
       
   }
 
-  signUp(data:object): void{
-    this.apiService.makeRequest('post',API.utente+API.registrati,data).subscribe((d)=>{
-      console.warn(d);
-    })
+  signUp(data:object):void{
+    this.sellerService.signUp(data);
   }
 }

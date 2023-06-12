@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SellerHomeComponent } from './seller-home/seller-home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     SellerAuthComponent,
     LoginComponent,
-    CartComponent
+    CartComponent,
+    SellerHomeComponent
   ],
   imports: [
     BrowserModule,
