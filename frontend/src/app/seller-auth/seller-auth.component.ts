@@ -13,7 +13,7 @@ import { SellerService } from '../services/seller.service';
 })
 export class SellerAuthComponent implements OnInit{
 
-  constructor(private sellerService:SellerService,private apiService:ApiService, private router:Router) {}
+  constructor(private sellerService:SellerService) {}
 
   ngOnInit(): void {
     this.sellerService.reloadSeller()
