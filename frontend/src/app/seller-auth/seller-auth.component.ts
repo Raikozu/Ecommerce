@@ -16,7 +16,7 @@ export class SellerAuthComponent implements OnInit{
   constructor(private sellerService:SellerService,private apiService:ApiService, private router:Router) {}
 
   ngOnInit(): void {
-      
+    this.sellerService.reloadSeller()
   }
 
   signUp(data:object):void{
