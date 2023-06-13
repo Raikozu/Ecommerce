@@ -1,11 +1,13 @@
 package ecommerce.personalecommerce.services;
 
 import java.security.Key;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -50,6 +52,10 @@ public class JwtService {
     }
 
     public String generateToken(Map<String, Object> extraClaims, UserDetails userDetails){
+        Collection<? extends GrantedAuthority> authorities=userDetails.getAuthorities();
+        String role = authorities.iterator().next().getAuthority();
+        extraClaims.put("ruolo", role);
+
         return Jwts
         .builder()
         .setClaims(extraClaims)
