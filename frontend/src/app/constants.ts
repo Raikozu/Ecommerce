@@ -3,7 +3,8 @@ export const API={
     utente:"/utente",
     product:"/prodotto",
     registrati:"/registrati",
-    listaUtenti:"/listaUtenti"
+    listaUtenti:"/listaUtenti",
+    accedi:"/accedi"
 }
 export const APP_CONFIG={
 

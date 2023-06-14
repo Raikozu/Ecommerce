@@ -11,6 +11,7 @@ import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SellerHomeComponent } from './seller-home/seller-home.component';
     SellerAuthComponent,
     LoginComponent,
     CartComponent,
-    SellerHomeComponent
+    SellerHomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

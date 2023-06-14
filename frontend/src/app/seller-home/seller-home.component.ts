@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-seller-home',
@@ -7,10 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./seller-home.component.css']
 })
 export class SellerHomeComponent {
-  constructor(private router:Router) {}
+  email: string ="";
 
-  logout(): void {
-    localStorage.clear();
-    this.router.navigate([""]);
+  constructor(private router: Router) {
+    const token = localStorage.getItem('seller');
+    if (token) {
+      const decodedToken: any = jwt_decode(token);
+      this.email = decodedToken.sub;
+    }
+  }
+
+  login(): void {
+    this.router.navigate(["login"]);
   }
 }

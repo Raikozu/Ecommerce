@@ -7,14 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private sellerService:SellerService) {}
+  constructor() {}
 
   canActivate(
     route: ActivatedRouteSnapshot, 
     state: RouterStateSnapshot):Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree{
-    if(localStorage.getItem("seller")){
+    if(localStorage.getItem("utente") || localStorage.getItem("admin")){
       return true;
     }
-    return this.sellerService.isSellerLoggedIn; // Ritorna true se l'utente ha l'autenticazione o i permessi appropriati
+    return false; // Ritorna true se l'utente ha l'autenticazione o i permessi appropriati
   }
 }

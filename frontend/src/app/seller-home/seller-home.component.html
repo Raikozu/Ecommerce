@@ -1,7 +1,5 @@
 <div id="registration-container">
-    <h2>Benvenuto!</h2>
-    <p>Sei già registrato.</p>
-    <form (ngSubmit)="logout()">
-        <button type="submit">Logout</button>
-    </form>
+    <h2>Benvenuto, {{ email }}</h2>
+    <p>La registrazione è avvenuta con successo. Logga qui</p>
+        <button (click)="login()">Login</button>
 </div>
