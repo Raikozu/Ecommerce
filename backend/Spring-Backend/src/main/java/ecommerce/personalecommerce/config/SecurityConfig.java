@@ -32,7 +32,7 @@ public class SecurityConfig {
         http.csrf().disable();
         http.cors();
         http.authorizeHttpRequests().requestMatchers("/utente/*").permitAll();
-        http.authorizeHttpRequests().requestMatchers("/prodotto/*").hasAnyAuthority("ADMIN");
+        http.authorizeHttpRequests().requestMatchers("/prodotto/*").permitAll();
         http.authorizeHttpRequests().requestMatchers("/vendita/*").hasAnyAuthority("ADMIN");
         http.authorizeHttpRequests().anyRequest().authenticated();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
