@@ -3,6 +3,7 @@ import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
 import { API } from '../constants';
 import { BehaviorSubject } from 'rxjs';
+import jwtDecode from 'jwt-decode';
 
 @Component({
   selector: 'app-login',
@@ -22,9 +23,18 @@ export class LoginComponent {
   login(data:object):void{
     let result =this.apiService.makeRequest("post",API.utente+API.accedi,data)
     result.subscribe((response) => {
-      localStorage.setItem("admin",JSON.stringify(response))
-      this.isSellerLoggedIn.next(true)
-      this.router.navigate(['admin']);
+      const token= response.token;
+      const tokenData= JSON.stringify(response);
+      const decodedToken = jwtDecode(token) as { ruolo: string };
+      const ruolo= decodedToken.ruolo;
+      if (ruolo === "ADMIN") {
+        localStorage.setItem("admin",tokenData);
+        this.router.navigate(['admin']);
+        this.isSellerLoggedIn.next(true);
+      }
+      else {
+        localStorage.setItem("utente",tokenData);
+      }
     })
   }
 }
